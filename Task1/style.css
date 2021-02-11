@@ -1,11 +1,17 @@
+:root {
+  --color-primary: #282d30;
+  --color-secondary: #a6b0b1;
+}
+
+
 * {
   font-family: "Source Sans Pro", sans-serif;
 }
 
 body {
-  margin: 0 0;
-  height: 120vh;
+  margin: 0;
 }
+
 
 .members {
   display: flex;
@@ -13,11 +19,16 @@ body {
   align-items: center;
 }
 
+.members-title{
+  color: var(--color-primary);
+  font-size: 42px;
+}
+
 .members-group {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: calc(6 * (165px + 20px * 2));
+  max-width: calc(6 * (165px + 20px * 2)); /*replacing 165+20*2 with 205 until var support in queries*/
 }
 
 .member {
@@ -35,28 +46,37 @@ body {
 }
 
 .member:hover .member-details {
-  display: inline-block;
+  visibility: visible;
 }
 
 .member:hover .member-image {
-    transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.member:hover::after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: calc(165px + 20px);
+  left: calc(50% - 5px);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 10px solid var(--color-primary);
 }
 
 .member-details {
   width: calc(165px * 2 + 40px - 16px * 2);
-  display: none;
+  display: inline-block;
+  visibility: hidden;
   position: absolute;
   top: calc(165px + 30px);
   border-radius: 4%;
   z-index: 1;
-  background: #282d30;
+  background: var(--color-primary);
   padding: 0 16px;
   color: #fff;
 }
-
-/*.member:nth-of-type(1) .member-details {
-    display: inline-block;
-}*/
 
 .member-email::before {
   background-image: url("src/at.png");
@@ -75,55 +95,122 @@ body {
   font-weight: 700;
 }
 .member-description {
-  color: #a6b0b1;
+  color: var(--color-secondary);
 }
 
 .member-email {
   font-weight: 700;
 }
 
-.member:last-of-type .member-details{
-    right: 0px;
+.member:last-of-type .member-details {
+  right: 0px;
 }
 
-@media screen and (max-width: calc(2*(165px + 20px*2))) {
-    .member-details {
-        width: calc(300px - 2*16px);
-        left: -67.5px;
-    }
-
+@media screen and (max-width: calc(2*205px)) { 
+  .member-details {
+    width: calc(300px - 2 * 16px);
+    left: -50%;
+  }
 }
 
-@media screen and (min-width: calc(2*(165px + 20px*2))) and (max-width: calc(3*(165px + 20px*2))) {
-    .member:last-of-type .member-details {
-        left: -102.5px;
-    }
-  
-    .member:nth-of-type(2n) .member-details {
+@media screen and (min-width: calc(2*205px)) and (max-width: calc(3*205px)) {
+  .member:last-of-type .member-details {
+    left: -50%;
+  }
+
+  .member:nth-of-type(2n) .member-details {
     right: 0px;
   }
 }
 
-@media screen and (min-width: calc(3*(165px + 20px*2))) and (max-width: calc(4*(165px + 20px*2))) {
+@media screen and (min-width: calc(3*205px)) and (max-width: calc(4*205px)) {
   .member:nth-of-type(3n) .member-details {
     right: 0px;
   }
 }
 
-@media screen and (min-width: calc(4*(165px + 20px*2))) and (max-width: calc(5*(165px + 20px*2))) {
+@media screen and (min-width: calc(4*205px)) and (max-width: calc(5*205px)) {
   .member:nth-of-type(4n) .member-details {
     right: 0px;
   }
 }
 
-@media screen and (min-width: calc(5*(165px + 20px*2))) and (max-width: calc(6*(165px + 20px*2))) {
+@media screen and (min-width: calc(5*205px)) and (max-width: calc(6*205px)) {
   .member:nth-of-type(5n) .member-details {
     right: 0px;
   }
 }
 
-@media screen and (min-width: calc(6*(165px + 20px*2))) {
+@media screen and (min-width: calc(6*205px)) {
   .member:nth-of-type(6n) .member-details {
     right: 0px;
   }
+}
+
+.alum:hover .alum-details {
+  visibility: visible;
+}
+
+.alum:hover .alum-image {
+  transform: scale(1.1);
+}
+
+.alumni {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alumni-title{
+  color: var(--color-secondary);
+  font-size: 14px;
+}
+.alumni-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 940px;
+}
+
+.alum {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+}
+
+.alum-image {
+  width: 64px;
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.alum-details {
+  background-color: var(--color-primary);
+  visibility: hidden;
+  display: inline-block;
+  width: max-content;
+  border-radius: 5px;
+  position: absolute;
+  top: calc(64px + 10px);
+  padding: 3px 5px;
+  z-index: 1;
+}
+
+.alum-name {
+  font-weight: 500;
+  font-size: 10px;
+  color: #fff;
+}
+
+.alum:hover::after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: calc(64px + 5px);
+  left: calc(50% - 5px);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 10px solid var(--color-primary);
 }
