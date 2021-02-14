@@ -8,9 +8,9 @@ body {
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sponsors {
@@ -24,8 +24,8 @@ main {
   height: max-content;
 }
 
-.sponsors-head{
-    margin: 20px 115px;
+.sponsors-head {
+  margin: 20px 115px;
 }
 
 .sponsor {
@@ -35,8 +35,8 @@ main {
 }
 
 .sponsor-title {
-  background: #30cec1;
   display: inline-block;
+  background: #30cec1;
   padding: 5px;
   padding-bottom: 13px;
   position: absolute;
@@ -130,6 +130,10 @@ main {
 }
 
 .sponsor-slideshow {
+  box-shadow: 10px 20px 30px #ccc;
+}
+
+.sponsor-slideshow {
   position: relative;
   height: 187px;
 }
@@ -140,100 +144,99 @@ main {
 }
 
 .sponsor-image--slide {
-    opacity: 0;
+  opacity: 0;
 }
 
 .sponsor-image--slide:nth-of-type(1) {
-    animation: slideshow 24s ease-in-out infinite;
+  animation: slideshow 24s ease-in-out infinite;
 }
 
 .sponsor-image--slide:nth-of-type(2) {
-    animation: slideshow 24s ease-in-out infinite;
-    animation-delay: 6s;
+  animation: slideshow 24s ease-in-out infinite;
+  animation-delay: 6s;
 }
 
 .sponsor-image--slide:nth-of-type(3) {
-    animation: slideshow 24s ease-in-out infinite;
-    animation-delay: 12s;
+  animation: slideshow 24s ease-in-out infinite;
+  animation-delay: 12s;
 }
 
 .sponsor-image--slide:nth-of-type(4) {
-    animation: slideshow 24s ease-in-out infinite;
-    animation-delay: 18s;
+  animation: slideshow 24s ease-in-out infinite;
+  animation-delay: 18s;
 }
 
 .sponsor-slideshow__status {
-    display: flex;
-    margin-top: 20px;
-    width: 33%;
-    position: relative;
-    left: 30px;
+  display: none;
+  margin-top: 20px;
+  width: 33%;
+  position: relative;
+  left: 30px;
 }
 
 .sponsor-status__bar {
-    display: inline-block;
-    height: 5px;
-    flex-grow: 1;
-    margin: 8px;
-    background: #30cec1;
-    opacity: 0.4;
+  display: inline-block;
+  height: 5px;
+  flex-grow: 1;
+  margin: 8px;
+  background: #30cec1;
+  opacity: 0.4;
 }
 
 .sponsor-status__bar:nth-of-type(1) {
-    animation: statusBar 24s ease-in-out infinite;
+  animation: statusBar 24s ease-in-out infinite;
 }
 
 .sponsor-status__bar:nth-of-type(2) {
-    animation: statusBar 24s ease-in-out infinite;
-    animation-delay: 6s;
+  animation: statusBar 24s ease-in-out infinite;
+  animation-delay: 6s;
 }
 
 .sponsor-status__bar:nth-of-type(3) {
-    animation: statusBar 24s ease-in-out infinite;
-    animation-delay: 12s;
+  animation: statusBar 24s ease-in-out infinite;
+  animation-delay: 12s;
 }
 
 .sponsor-status__bar:nth-of-type(4) {
-    animation: statusBar 24s ease-in-out infinite;
-    animation-delay: 18s;
+  animation: statusBar 24s ease-in-out infinite;
+  animation-delay: 18s;
 }
 
 @keyframes slideshow {
   0% {
-    opacity:0;
+    opacity: 0;
   }
   5% {
-      opacity:1;
+    opacity: 1;
   }
   25% {
-      opacity: 1;
+    opacity: 1;
   }
   30% {
-      opacity: 0;
+    opacity: 0;
   }
-  100%{
-      opacity:0;
+  100% {
+    opacity: 0;
   }
-
 }
 
 @keyframes statusBar {
-    0% {
-      opacity:0.4;
-    }
-    5% {
-        opacity:1;
-    }
-    25% {
-        opacity: 1;
-    }
-    30% {
-        opacity: 0.4;
-    }
-    100%{
-        opacity:0.4;
-    }
+  0% {
+    opacity: 0.4;
   }
+  5% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
 
 @media screen and (min-width: 550px) {
   .sponsor--golden {
@@ -299,27 +302,31 @@ main {
   .sponsor {
     margin: 60px 10vw;
   }
+
+  .sponsor-slideshow__status {
+    display: flex;
+  }
 }
 
-
 .sponsors-additional {
-    display: flex;
-    flex-direction: column;
-    max-width: 1500px;
-    margin: 40px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1500px;
+  margin: 40px;
 }
 
 .sponsors-title {
-    font-size: 28px;
+  font-size: 28px;
 }
 
 .sponsors-logos {
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .sponsors-logo--additional {
-    width: 100px;
-    margin: 40px;
+  width: 100px;
+  margin: 40px;
 }

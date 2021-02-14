@@ -3,7 +3,6 @@
   --color-secondary: #a6b0b1;
 }
 
-
 * {
   font-family: "Source Sans Pro", sans-serif;
 }
@@ -12,36 +11,37 @@ body {
   margin: 0;
 }
 
-
 .members {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.members-title{
-  color: var(--color-primary);
+.members-title {
   font-size: 42px;
+  color: var(--color-primary);
 }
 
 .members-group {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: calc(6 * (165px + 20px * 2)); /*replacing 165+20*2 with 205 until var support in queries*/
+  max-width: calc(
+    6 * (165px + 20px * 2)
+  ); /*replacing 165+20*2 with 205 until var support in queries*/
 }
 
 .member {
+  position: relative;
   display: inline-flex;
   flex-direction: column;
-  position: relative;
   margin: 30px 20px;
 }
 
 .member-image {
+  display: inline-block;
   width: 165px;
   border-radius: 20%;
-  display: inline-block;
   transition: transform 0.2s ease-in-out;
 }
 
@@ -66,24 +66,24 @@ body {
 }
 
 .member-details {
-  width: calc(165px * 2 + 40px - 16px * 2);
-  display: inline-block;
-  visibility: hidden;
   position: absolute;
   top: calc(165px + 30px);
-  border-radius: 4%;
+  display: inline-block;
+  visibility: hidden;
+  width: calc(165px * 2 + 40px - 16px * 2);
   z-index: 1;
-  background: var(--color-primary);
   padding: 0 16px;
+  border-radius: 4%;
+  background: var(--color-primary);
   color: #fff;
 }
 
 .member-email::before {
-  background-image: url("src/at.png");
-  background-size: 16px 16px;
   display: inline-block;
   width: 24px;
   height: 16px;
+  background-image: url("src/at.png");
+  background-size: 16px 16px;
   background-repeat: no-repeat;
   content: "";
 }
@@ -106,7 +106,7 @@ body {
   right: 0px;
 }
 
-@media screen and (max-width: calc(2*205px)) { 
+@media screen and (max-width: calc(2*205px)) {
   .member-details {
     width: calc(300px - 2 * 16px);
     left: -67.5px;
@@ -161,7 +161,7 @@ body {
   align-items: center;
 }
 
-.alumni-title{
+.alumni-title {
   color: var(--color-secondary);
   font-size: 14px;
 }
@@ -186,13 +186,13 @@ body {
 }
 
 .alum-details {
-  background-color: var(--color-primary);
+  position: absolute;
   visibility: hidden;
   display: inline-block;
   width: max-content;
-  border-radius: 5px;
-  position: absolute;
   top: calc(64px + 10px);
+  background-color: var(--color-primary);
+  border-radius: 5px;
   padding: 3px 5px;
   z-index: 1;
 }
