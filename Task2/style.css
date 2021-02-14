@@ -1,0 +1,67 @@
+* {
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.sponsor-main {
+    position: relative;
+}
+
+.sponsor {
+    margin: 80px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sponsor-title {
+    background: #30cec1;
+    display: inline-block;
+    padding: 5px;
+    padding-bottom: 13px;
+    position: absolute;
+    right: -15px;
+    bottom: -25px;
+    z-index: 1;
+    box-shadow: 5px 5px 5px #ddd;
+}
+
+.sponsor-type {
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    margin: 6px 0;
+}
+
+.sponsor-name{
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+
+.sponsor-info {
+    position: relative;
+    padding-top: 50px;
+    box-shadow: 5px 5px 3px #fafafa;
+}
+
+.sponsor-image {
+    width:100%;
+}
+
+.sponsor-logo {
+    width: 160px;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    overflow:auto;
+}
+
+.sponsor-description {
+    margin: 15px;
+    margin-top: 5px;
+    color: #4f4e4e;
+    line-height: 22px;
+}

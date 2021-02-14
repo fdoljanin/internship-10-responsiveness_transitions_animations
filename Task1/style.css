@@ -109,13 +109,13 @@ body {
 @media screen and (max-width: calc(2*205px)) { 
   .member-details {
     width: calc(300px - 2 * 16px);
-    left: -50%;
+    left: -67.5px;
   }
 }
 
 @media screen and (min-width: calc(2*205px)) and (max-width: calc(3*205px)) {
   .member:last-of-type .member-details {
-    left: -50%;
+    left: -102.5px;
   }
 
   .member:nth-of-type(2n) .member-details {
