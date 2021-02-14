@@ -1,67 +1,325 @@
 * {
-    font-family: "Source Sans Pro", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
+  margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sponsors {
+  display: flex;
+  flex-direction: column;
+  max-width: 1500px;
 }
 
 .sponsor-main {
-    position: relative;
+  position: relative;
+  height: max-content;
+}
+
+.sponsors-head{
+    margin: 20px 115px;
 }
 
 .sponsor {
-    margin: 80px 40px;
-    display: flex;
-    flex-direction: column;
+  margin: 80px 40px;
+  display: flex;
+  flex-direction: column;
 }
 
 .sponsor-title {
-    background: #30cec1;
-    display: inline-block;
-    padding: 5px;
-    padding-bottom: 13px;
-    position: absolute;
-    right: -15px;
-    bottom: -25px;
-    z-index: 1;
-    box-shadow: 5px 5px 5px #ddd;
+  background: #30cec1;
+  display: inline-block;
+  padding: 5px;
+  padding-bottom: 13px;
+  position: absolute;
+  right: -15px;
+  bottom: -25px;
+  z-index: 1;
+  box-shadow: 10px 20px 30px #ddd;
 }
 
 .sponsor-type {
-    color: #fff;
-    font-weight: 700;
-    font-size: 14px;
-    margin: 6px 0;
+  color: #fff;
+  font-weight: 800;
+  margin: 6px 0;
 }
 
-.sponsor-name{
-    font-size: 18px;
-    margin: 5px 0;
+.sponsor-name {
+  font-weight: 800;
+  font-size: 18px;
+  margin: 5px 0;
 }
-
 
 .sponsor-info {
-    position: relative;
-    padding-top: 50px;
-    box-shadow: 5px 5px 3px #fafafa;
+  position: relative;
+  padding-top: 50px;
+  box-shadow: 0px 5px 20px #eee;
 }
 
 .sponsor-image {
-    width:100%;
+  width: 100%;
+  height: 187px;
 }
 
 .sponsor-logo {
-    width: 160px;
-    position: absolute;
-    left: -20px;
-    top: -20px;
-    overflow:auto;
+  position: absolute;
+  overflow: auto;
+  top: 25px;
+  left: 15px;
+}
+
+.sponsor-logo--rimac {
+  width: 160px;
+  left: -20px;
+  top: -20px;
 }
 
 .sponsor-description {
-    margin: 15px;
-    margin-top: 5px;
-    color: #4f4e4e;
-    line-height: 22px;
+  margin: 15px;
+  margin-top: 5px;
+  color: #4f4e4e;
+  line-height: 22px;
+}
+
+.sponsor-logo--ericsson {
+  width: 50px;
+}
+
+.sponsor-logo--extension {
+  width: 120px;
+}
+
+.sponsor-logo--hattrick {
+  width: 100px;
+}
+
+.sponsor--golden .sponsor-title {
+  background: #2c373f;
+  width: 140px;
+  bottom: -55px;
+}
+
+.sponsor--golden .sponsor-name {
+  color: #30cec1;
+}
+
+.sponsor--golden .sponsor-info {
+  padding-top: 75px;
+}
+
+.sponsor--golden:nth-of-type(2n + 1) .sponsor-title {
+  right: auto;
+  left: -15px;
+}
+
+.sponsor--golden:nth-of-type(2n + 1) .sponsor-logo {
+  left: auto;
+  right: 15px;
+}
+
+.sponsor--golden .sponsor-image {
+  box-shadow: 10px 20px 30px #ccc;
+}
+
+.sponsor-slideshow {
+  position: relative;
+  height: 187px;
+}
+
+.sponsor-slideshow .sponsor-image {
+  position: absolute;
+  height: 100%;
+}
+
+.sponsor-image--slide {
+    opacity: 0;
+}
+
+.sponsor-image--slide:nth-of-type(1) {
+    animation: slideshow 24s ease-in-out infinite;
+}
+
+.sponsor-image--slide:nth-of-type(2) {
+    animation: slideshow 24s ease-in-out infinite;
+    animation-delay: 6s;
+}
+
+.sponsor-image--slide:nth-of-type(3) {
+    animation: slideshow 24s ease-in-out infinite;
+    animation-delay: 12s;
+}
+
+.sponsor-image--slide:nth-of-type(4) {
+    animation: slideshow 24s ease-in-out infinite;
+    animation-delay: 18s;
+}
+
+.sponsor-slideshow__status {
+    display: flex;
+    margin-top: 20px;
+    width: 33%;
+    position: relative;
+    left: 30px;
+}
+
+.sponsor-status__bar {
+    display: inline-block;
+    height: 5px;
+    flex-grow: 1;
+    margin: 8px;
+    background: #30cec1;
+    opacity: 0.4;
+}
+
+.sponsor-status__bar:nth-of-type(1) {
+    animation: statusBar 24s ease-in-out infinite;
+}
+
+.sponsor-status__bar:nth-of-type(2) {
+    animation: statusBar 24s ease-in-out infinite;
+    animation-delay: 6s;
+}
+
+.sponsor-status__bar:nth-of-type(3) {
+    animation: statusBar 24s ease-in-out infinite;
+    animation-delay: 12s;
+}
+
+.sponsor-status__bar:nth-of-type(4) {
+    animation: statusBar 24s ease-in-out infinite;
+    animation-delay: 18s;
+}
+
+@keyframes slideshow {
+  0% {
+    opacity:0;
+  }
+  5% {
+      opacity:1;
+  }
+  25% {
+      opacity: 1;
+  }
+  30% {
+      opacity: 0;
+  }
+  100%{
+      opacity:0;
+  }
+
+}
+
+@keyframes statusBar {
+    0% {
+      opacity:0.4;
+    }
+    5% {
+        opacity:1;
+    }
+    25% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0.4;
+    }
+    100%{
+        opacity:0.4;
+    }
+  }
+
+@media screen and (min-width: 550px) {
+  .sponsor--golden {
+    width: 70vw;
+    align-self: flex-start;
+  }
+
+  .sponsor--golden:nth-of-type(2n + 1) {
+    align-self: flex-end;
+  }
+
+  .sponsor--golden:nth-of-type(2n) .sponsor-title {
+    right: -100px;
+    left: auto;
+  }
+
+  .sponsor--golden:nth-of-type(2n + 1) .sponsor-title {
+    right: auto;
+    left: -100px;
+  }
+
+  .sponsor--golden .sponsor-title {
+    width: 250px;
+  }
+
+  .sponsor--rimac .sponsor-title {
+    width: 200px;
+    padding: 10px 20px;
+    bottom: -30px;
+  }
+
+  .sponsor--rimac .sponsor-name {
+    font-size: 26px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sponsor--rimac {
+    flex-direction: row;
+  }
+  .sponsor--rimac > div {
+    flex: 1;
+    margin: 20px;
+  }
+
+  .sponsor--rimac .sponsor-title {
+    left: initial;
+    right: 0px;
+  }
+
+  .sponsor--rimac .sponsor-slideshow {
+    height: 320px;
+  }
+
+  .sponsor--rimac .sponsor-info {
+    top: 70px;
+  }
+
+  .sponsor--golden {
+    width: 40vw;
+    max-width: 450px;
+  }
+  .sponsor {
+    margin: 60px 10vw;
+  }
+}
+
+
+.sponsors-additional {
+    display: flex;
+    flex-direction: column;
+    max-width: 1500px;
+    margin: 40px;
+}
+
+.sponsors-title {
+    font-size: 28px;
+}
+
+.sponsors-logos {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.sponsors-logo--additional {
+    width: 100px;
+    margin: 40px;
 }
